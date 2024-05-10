@@ -1,4 +1,5 @@
 import logging
+import requests
 from dukeauth import get_auth
 from dukeoutages import main
 
@@ -21,11 +22,13 @@ c_handler.setFormatter(c_format)
 
 logger.addHandler(c_handler)
 
-headers, cookies = get_auth()
+random_url = "https://outagemap.duke-energy.com/"
+
+r = requests.get(random_url)
 
 if __name__ == '__main__':
     try:
-        print(headers, cookies)
+        print(r.status_code)
         logger.info("Outage scripts ran successfully.")
     except ValueError as e:
         print(e)
