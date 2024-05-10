@@ -25,7 +25,7 @@ headers, cookies = get_auth()
 
 if __name__ == '__main__':
     try:
-        main(headers, cookies)
+        print(headers, cookies)
         logger.info("Outage scripts ran successfully.")
     except ValueError as e:
         print(e)
