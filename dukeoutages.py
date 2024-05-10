@@ -450,13 +450,7 @@ Method for connecting to the database
 
 def connect_db():
     try:
-        conn = psycopg2.connect(
-            database=config("DB_NAME"),
-            user=config("DB_USER"),
-            password=config("DB_PASS"),
-            host=config("DB_SERVICE"),
-            port=config("DB_PORT"),
-        )
+        conn = psycopg2.connect(config("REMOTE_DB_SERVICE"))
     except Exception as e:
         print(f"Error connecting to the database: {str(e)}")
     finally:
