@@ -22,7 +22,7 @@ c_handler.setFormatter(c_format)
 
 logger.addHandler(c_handler)
 
-random_url = "https://www.outagemap.duke-energy.com/config/config.prod.json"
+random_url = "https://www.google.com/"
 
 r = requests.get(random_url)
 
